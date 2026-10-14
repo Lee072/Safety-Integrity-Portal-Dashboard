@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  color: #1e3532;
+  background: #f7f8f5;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+select,
+input,
+textarea {
+  font: inherit;
+}
+
+button,
+select {
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #4f8b76;
+  outline-offset: 2px;
+}
+
+.field {
+  width: 100%;
+  border: 1px solid #dfe5e2;
+  border-radius: 0.75rem;
+  background: #fafbf9;
+  padding: 0.7rem 0.85rem;
+  color: #273d39;
+  font-size: 0.75rem;
+  transition: border-color 150ms, box-shadow 150ms, background 150ms;
+}
+
+.field::placeholder {
+  color: #9aa8a3;
+}
+
+.field:focus {
+  border-color: #6c9a8d;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(79, 139, 118, 0.1);
+  outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

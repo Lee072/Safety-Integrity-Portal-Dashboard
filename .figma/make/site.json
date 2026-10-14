@@ -1,0 +1,10 @@
+{
+  "description": "This dashboard application provides a comprehensive safety integrity portal for organizations, enabling real-time monitoring and management of safety protocols.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
