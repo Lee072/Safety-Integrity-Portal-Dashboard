@@ -128,63 +128,63 @@ function Icon({ name, className = "h-5 w-5" }: { name: IconName; className?: str
 }
 
 const concerns = [
-  { id: "SC-0284", title: "Unsecured access panel near Line 4", owner: "Maya Chen", due: "Today", risk: "Critical" },
-  { id: "SC-0281", title: "Emergency stop test overdue", owner: "Liam Foster", due: "Tomorrow", risk: "High" },
-  { id: "SC-0276", title: "Ventilation readings outside target", owner: "Nora Singh", due: "Oct 12", risk: "Medium" },
-  { id: "SC-0272", title: "Contractor induction incomplete", owner: "Evan Brooks", due: "Oct 15", risk: "Low" },
+  { id: "SC-0284", title: "Walkway hanger-rod redesign doubles connection load", owner: "Maya Chen", due: "Today", risk: "Critical" },
+  { id: "SC-0281", title: "Box-beam weld capacity remains unverified", owner: "Liam Foster", due: "Tomorrow", risk: "High" },
+  { id: "SC-0276", title: "Fabrication change lacks independent calculation", owner: "Nora Singh", due: "Oct 12", risk: "Medium" },
+  { id: "SC-0272", title: "Shop-drawing approval record is incomplete", owner: "Evan Brooks", due: "Oct 15", risk: "Low" },
 ];
 
 const assessmentGroups = [
   {
-    title: "Safety & risks",
-    description: "Core project safeguards",
+    title: "Structural safety & risks",
+    description: "Walkway connection safeguards",
     questions: [
-      "Foreseeable hazards have been identified and documented",
-      "Safety requirements are established for this project",
-      "An independent person reviewed the safety-critical design",
-      "Proposed changes were evaluated for new risks",
-      "Schedule pressure has not influenced a safety decision",
+      "The suspended walkway load path is identified and documented",
+      "Connection loads account for the fourth-floor box beam carrying both walkway levels",
+      "An independent structural engineer reviewed the hanger-rod design",
+      "The two-rod fabrication change was evaluated for its effect on connection loads",
+      "Schedule pressure did not influence structural approval",
     ],
   },
   {
-    title: "Design & engineering",
-    description: "Technical integrity controls",
+    title: "Design & fabrication",
+    description: "Connection integrity controls",
     questions: [
-      "Design follows approved engineering standards",
-      "Code and controls have been reviewed and tested",
-      "Safety-critical systems are isolated from non-critical components",
-      "All design changes are reviewed and documented",
-      "Independent verification and validation is complete",
+      "The walkway design follows the applicable Kansas City building code",
+      "Hanger rods, nuts, washers, welds, and box beams have verified capacities",
+      "The connection is checked for both dead load and occupied live load",
+      "All shop-drawing revisions are reviewed and documented",
+      "Independent calculation and sealed approval are complete",
     ],
   },
   {
-    title: "Verification & testing",
-    description: "Evidence and sign-off",
+    title: "Review & sign-off",
+    description: "Calculations and approval evidence",
     questions: [
-      "Test evidence is attached to the project record",
-      "Outstanding defects have an owner and target date",
-      "Operational readiness review has been completed",
+      "Structural calculations are attached to the project record",
+      "Outstanding connection deficiencies have an owner and target date",
+      "The final shop drawings match the approved structural design",
     ],
   },
 ];
 
 const failureModes = [
-  { component: "Emergency stop circuit", mode: "Relay contact fails closed", impact: "Critical", owner: "Maya Chen" },
-  { component: "Line 4 access panel", mode: "Interlock does not detect open panel", impact: "High", owner: "Liam Foster" },
-  { component: "Ventilation controller", mode: "Sensor signal drifts outside tolerance", impact: "Medium", owner: "Nora Singh" },
-  { component: "Backup power supply", mode: "Transfer delay exceeds safe limit", impact: "High", owner: "Evan Brooks" },
+  { component: "Fourth-floor box-beam connection", mode: "Nut pulls through welded channel section", impact: "Critical", owner: "Maya Chen" },
+  { component: "Revised two-rod hanger detail", mode: "Upper connection carries both walkway loads", impact: "Critical", owner: "Liam Foster" },
+  { component: "Box-beam channel welds", mode: "Welded channels separate under load", impact: "High", owner: "Nora Singh" },
+  { component: "Fabrication shop drawings", mode: "Design change proceeds without recalculation", impact: "High", owner: "Evan Brooks" },
 ];
 
 const teamMembers = [
-  { name: "Alex Morgan", initials: "AM", role: "Project owner / manager", discipline: "Leadership", email: "alex.morgan@northstar.dev", phone: "+1 415 555 0124", task: "Approve Gate 3 readiness", status: "Pending", due: "Today", tone: "bg-[#dcebe5] text-[#28584d]" },
-  { name: "Priya Shah", initials: "PS", role: "Business analyst", discipline: "Product", email: "priya.shah@northstar.dev", phone: "+1 415 555 0188", task: "Confirm safety requirements", status: "In progress", due: "Today", tone: "bg-[#ece4d7] text-[#795d31]" },
-  { name: "Marcus Chen", initials: "MC", role: "Software architect", discipline: "Engineering", email: "marcus.chen@northstar.dev", phone: "+1 415 555 0162", task: "Review isolation architecture", status: "In progress", due: "Oct 14", tone: "bg-[#dce5ef] text-[#385979]" },
-  { name: "Sofia Reyes", initials: "SR", role: "Frontend developer", discipline: "Engineering", email: "sofia.reyes@northstar.dev", phone: "+1 415 555 0191", task: "Resolve alert accessibility", status: "Pending", due: "Oct 15", tone: "bg-[#eadff0] text-[#684b78]" },
-  { name: "Noah Williams", initials: "NW", role: "Backend developer", discipline: "Engineering", email: "noah.williams@northstar.dev", phone: "+1 415 555 0146", task: "Complete audit event API", status: "In progress", due: "Oct 15", tone: "bg-[#e1e8d6] text-[#53653a]" },
-  { name: "Maya Patel", initials: "MP", role: "Full stack developer", discipline: "Engineering", email: "maya.patel@northstar.dev", phone: "+1 415 555 0175", task: "Connect review evidence flow", status: "In progress", due: "Oct 16", tone: "bg-[#f0dfdf] text-[#784949]" },
-  { name: "Ethan Brooks", initials: "EB", role: "DevOps engineer", discipline: "Operations", email: "ethan.brooks@northstar.dev", phone: "+1 415 555 0133", task: "Validate failover runbook", status: "Pending", due: "Oct 17", tone: "bg-[#dae9e9] text-[#356263]" },
-  { name: "Lena Kim", initials: "LK", role: "UX/UI designer", discipline: "Design", email: "lena.kim@northstar.dev", phone: "+1 415 555 0119", task: "Finalize concern workflow", status: "Completed", due: "Oct 11", tone: "bg-[#f0e5d5] text-[#755a37]" },
-  { name: "Jordan Bell", initials: "JB", role: "QA / tester", discipline: "Quality", email: "jordan.bell@northstar.dev", phone: "+1 415 555 0157", task: "Run critical-path regression", status: "Pending", due: "Oct 16", tone: "bg-[#e2e1ef] text-[#53517a]" },
+  { name: "Alex Morgan", initials: "AM", role: "Investigation lead", discipline: "Leadership", email: "alex.morgan@northstar.dev", phone: "+1 415 555 0124", task: "Approve final investigation scope", status: "Pending", due: "Today", tone: "bg-[#dcebe5] text-[#28584d]" },
+  { name: "Priya Shah", initials: "PS", role: "Building code analyst", discipline: "Compliance", email: "priya.shah@northstar.dev", phone: "+1 415 555 0188", task: "Confirm 1981 code requirements", status: "In progress", due: "Today", tone: "bg-[#ece4d7] text-[#795d31]" },
+  { name: "Marcus Chen", initials: "MC", role: "Structural engineer", discipline: "Engineering", email: "marcus.chen@northstar.dev", phone: "+1 415 555 0162", task: "Recalculate hanger-rod loads", status: "In progress", due: "Oct 14", tone: "bg-[#dce5ef] text-[#385979]" },
+  { name: "Sofia Reyes", initials: "SR", role: "Connection design engineer", discipline: "Engineering", email: "sofia.reyes@northstar.dev", phone: "+1 415 555 0191", task: "Check box-beam connection capacity", status: "Pending", due: "Oct 15", tone: "bg-[#eadff0] text-[#684b78]" },
+  { name: "Noah Williams", initials: "NW", role: "Forensic engineer", discipline: "Investigation", email: "noah.williams@northstar.dev", phone: "+1 415 555 0146", task: "Document collapse load path", status: "In progress", due: "Oct 15", tone: "bg-[#e1e8d6] text-[#53653a]" },
+  { name: "Maya Patel", initials: "MP", role: "Materials specialist", discipline: "Investigation", email: "maya.patel@northstar.dev", phone: "+1 415 555 0175", task: "Review weld and steel evidence", status: "In progress", due: "Oct 16", tone: "bg-[#f0dfdf] text-[#784949]" },
+  { name: "Ethan Brooks", initials: "EB", role: "Fabrication reviewer", discipline: "Fabrication", email: "ethan.brooks@northstar.dev", phone: "+1 415 555 0133", task: "Trace shop-drawing revisions", status: "Pending", due: "Oct 17", tone: "bg-[#dae9e9] text-[#356263]" },
+  { name: "Lena Kim", initials: "LK", role: "Records coordinator", discipline: "Compliance", email: "lena.kim@northstar.dev", phone: "+1 415 555 0119", task: "Index sealed drawings and approvals", status: "Completed", due: "Oct 11", tone: "bg-[#f0e5d5] text-[#755a37]" },
+  { name: "Jordan Bell", initials: "JB", role: "Independent checker", discipline: "Quality", email: "jordan.bell@northstar.dev", phone: "+1 415 555 0157", task: "Verify connection calculations", status: "Pending", due: "Oct 16", tone: "bg-[#e2e1ef] text-[#53517a]" },
 ];
 
 function Sidebar({
@@ -201,7 +201,7 @@ function Sidebar({
   const nav = [
     ["Overview", "dashboard"],
     ["Assessments", "clipboard"],
-    ["Fail-Safe Reviews", "shield"],
+    ["Structural Reviews", "shield"],
     ["Concerns", "flag"],
     ["Accountability", "users"],
     ["Reports", "file"],
@@ -342,10 +342,10 @@ function Overview({ onReport, onAssess }: { onReport: () => void; onAssess: () =
       <section className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
         <div>
           <div className="mb-2 flex items-center gap-2 text-xs font-medium text-[#52736a]">
-            <span>Projects</span><span className="text-slate-300">/</span><span>Atlas Expansion</span>
+            <span>Case reviews</span><span className="text-slate-300">/</span><span>Hyatt Regency Walkways</span>
           </div>
           <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a] sm:text-[36px]">Good morning, Alex.</h2>
-          <p className="mt-2 text-sm text-slate-500">Here is today’s safety integrity overview.</p>
+          <p className="mt-2 text-sm text-slate-500">Here is today’s structural integrity investigation overview.</p>
         </div>
         <button
           onClick={onReport}
@@ -365,7 +365,7 @@ function Overview({ onReport, onAssess }: { onReport: () => void; onAssess: () =
             <h3 className="text-sm font-semibold text-[#542922]">Immediate attention required</h3>
             <span className="rounded-full bg-[#e5563d] px-2 py-0.5 text-[9px] font-bold uppercase tracking-wider text-white">Critical</span>
           </div>
-          <p className="mt-1 text-xs leading-5 text-[#8f5d54]">An unsecured access panel was reported near Line 4. Production team has been notified.</p>
+          <p className="mt-1 text-xs leading-5 text-[#8f5d54]">The revised two-rod hanger detail doubled the load on the fourth-floor box-beam connection. Structural review is required.</p>
         </div>
         <button className="mt-4 flex shrink-0 items-center gap-1 text-xs font-semibold text-[#9b3a29] sm:ml-auto sm:mt-0">
           Review concern <Icon name="arrow" className="h-3.5 w-3.5" />
@@ -375,8 +375,8 @@ function Overview({ onReport, onAssess }: { onReport: () => void; onAssess: () =
       <section className="mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
         <MetricCard icon="flag" label="Open concerns" value="12" note="+2 this week" tone="rose" />
         <MetricCard icon="alert" label="High-risk items" value="3" note="Needs action" tone="amber" />
-        <MetricCard icon="clipboard" label="Reviews pending" value="7" note="2 due today" tone="blue" />
-        <MetricCard icon="check" label="Corrective actions" value="86%" note="+8% this month" tone="mint" />
+        <MetricCard icon="clipboard" label="Calculations pending" value="7" note="2 due today" tone="blue" />
+        <MetricCard icon="check" label="Evidence reviewed" value="86%" note="+8% this month" tone="mint" />
       </section>
 
       <section className="mt-5 grid gap-5 xl:grid-cols-[minmax(0,1.65fr)_minmax(320px,0.75fr)]">
@@ -420,8 +420,8 @@ function Overview({ onReport, onAssess }: { onReport: () => void; onAssess: () =
         <div className="rounded-2xl border border-slate-200/80 bg-white p-5">
           <div className="flex items-start justify-between">
             <div>
-              <h3 className="text-sm font-semibold text-[#17312e]">Approval readiness</h3>
-              <p className="mt-1 text-xs text-slate-400">Atlas Expansion</p>
+              <h3 className="text-sm font-semibold text-[#17312e]">Investigation readiness</h3>
+              <p className="mt-1 text-xs text-slate-400">Hyatt Regency Walkway Review</p>
             </div>
             <span className="rounded-full bg-amber-50 px-2.5 py-1 text-[10px] font-semibold text-amber-700">At risk</span>
           </div>
@@ -441,7 +441,7 @@ function Overview({ onReport, onAssess }: { onReport: () => void; onAssess: () =
           </div>
           <div className="rounded-xl bg-[#f6f8f5] p-3.5">
             <p className="text-xs font-semibold text-[#29473f]">2 critical checks remain</p>
-            <p className="mt-1 text-[10px] leading-4 text-slate-500">Complete the independent review and test evidence before approval.</p>
+            <p className="mt-1 text-[10px] leading-4 text-slate-500">Complete the independent load check and verify the shop-drawing approval record.</p>
           </div>
           <button onClick={onAssess} className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-[#cbdad5] py-2.5 text-xs font-semibold text-[#28584d] transition hover:bg-[#f1f7f4]">
             Continue assessment <Icon name="arrow" className="h-3.5 w-3.5" />
@@ -464,9 +464,9 @@ function Assessments() {
     <main className="mx-auto w-full max-w-[1440px] p-5 sm:p-8">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <p className="mb-2 text-xs font-semibold text-[#52736a]">Atlas Expansion / Gate 3</p>
-          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Risk assessment</h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-500">Evaluate key safety, ethical, and operational factors before project approval.</p>
+          <p className="mb-2 text-xs font-semibold text-[#52736a]">Hyatt Regency Walkway Review / 1981 Collapse</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Design integrity assessment</h2>
+          <p className="mt-2 max-w-2xl text-sm text-slate-500">Evaluate the structural design, fabrication change, review process, and approval controls behind the suspended walkways.</p>
         </div>
         <button className="rounded-xl bg-[#173c36] px-4 py-2.5 text-sm font-semibold text-white shadow-sm">Save progress</button>
       </div>
@@ -527,8 +527,8 @@ function Assessments() {
             </div>
           </div>
           <div className="rounded-2xl bg-[#173c36] p-5 text-white">
-            <div className="flex items-center justify-between"><h3 className="text-sm font-semibold">Project approval</h3><Icon name="shield" className="h-5 w-5 text-[#d9ff85]" /></div>
-            <p className="mt-3 text-xs leading-5 text-emerald-50/65">Approval is blocked until all critical controls are reviewed and supporting evidence is attached.</p>
+            <div className="flex items-center justify-between"><h3 className="text-sm font-semibold">Engineering sign-off</h3><Icon name="shield" className="h-5 w-5 text-[#d9ff85]" /></div>
+            <p className="mt-3 text-xs leading-5 text-emerald-50/65">Sign-off is blocked until the altered load path, connection capacity, and approval evidence are independently reviewed.</p>
             <div className="mt-5 flex items-center gap-2 rounded-xl bg-white/8 p-3 text-xs">
               <span className="h-2 w-2 rounded-full bg-amber-400" />
               <span className="font-medium">Review in progress</span>
@@ -542,17 +542,17 @@ function Assessments() {
 
 function FailSafeReviews() {
   const [statuses, setStatuses] = useState<Record<string, string>>({
-    "Emergency stop circuit": "Completed",
-    "Line 4 access panel": "Needs review",
-    "Ventilation controller": "Completed",
-    "Backup power supply": "Not started",
+    "Fourth-floor box-beam connection": "Completed",
+    "Revised two-rod hanger detail": "Needs review",
+    "Box-beam channel welds": "Completed",
+    "Fabrication shop drawings": "Not started",
   });
   const checks = [
-    "Safety mechanisms operate independently from the systems they protect",
-    "A single component failure cannot disable all protective controls",
-    "Manual override requires authorized access and creates an audit record",
-    "Loss of power places the system into a known safe state",
-    "Fail-safe response time meets the approved engineering requirement",
+    "The engineer of record independently verifies every revised connection detail",
+    "The walkway load path remains continuous after the hanger-rod change",
+    "Fabrication changes require documented calculation and written approval",
+    "Box-beam welds and bearing surfaces resist the full connection demand",
+    "Connection capacity meets the applicable dead-load and live-load requirements",
   ];
   const [answers, setAnswers] = useState<Record<string, boolean>>({
     [checks[0]]: true,
@@ -570,20 +570,20 @@ function FailSafeReviews() {
 
   const downloadReport = () => {
     const report = [
-      "NORTHSTAR SAFETY INTEGRITY — FAIL-SAFE REVIEW",
-      "Project: Atlas Expansion / Line 4",
+      "NORTHSTAR SAFETY INTEGRITY — STRUCTURAL REVIEW",
+      "Case: Hyatt Regency Walkways / 1981 Collapse",
       `Progress: ${percent}%`,
       "",
-      "SYSTEM ANALYSIS",
+      "CONNECTION ANALYSIS",
       ...failureModes.map((item) => `${item.component} | ${item.mode} | ${item.impact} | ${statuses[item.component]}`),
       "",
-      "INDEPENDENCE & EFFECTIVENESS CHECKS",
+      "INDEPENDENT DESIGN & CAPACITY CHECKS",
       ...checks.map((check) => `${check} | ${check in answers ? (answers[check] ? "Yes" : "No") : "Not answered"}`),
     ].join("\n");
     const url = URL.createObjectURL(new Blob([report], { type: "text/plain" }));
     const link = document.createElement("a");
     link.href = url;
-    link.download = "atlas-fail-safe-review.txt";
+    link.download = "hyatt-regency-structural-review.txt";
     link.click();
     URL.revokeObjectURL(url);
   };
@@ -592,9 +592,9 @@ function FailSafeReviews() {
     <main className="mx-auto w-full max-w-[1440px] p-5 sm:p-8">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <p className="mb-2 text-xs font-semibold text-[#52736a]">Atlas Expansion / Line 4</p>
-          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Fail-safe review</h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-500">Verify that critical systems detect failures, respond correctly, and transition equipment into a safe state.</p>
+          <p className="mb-2 text-xs font-semibold text-[#52736a]">Hyatt Regency Walkway Review / Connections</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Structural connection review</h2>
+          <p className="mt-2 max-w-2xl text-sm text-slate-500">Trace the suspended-walkway load path and verify how the hanger-rod redesign affected the box-beam connections.</p>
         </div>
         <div className="flex items-center gap-3">
           <span className="rounded-full bg-amber-50 px-3 py-2 text-[10px] font-semibold text-amber-700">Review in progress</span>
@@ -608,8 +608,8 @@ function FailSafeReviews() {
             <div className="flex items-center border-b border-slate-100 p-5">
               <div className="grid h-9 w-9 place-items-center rounded-xl bg-[#edf5f1] text-[#397064]"><Icon name="settings" className="h-[18px] w-[18px]" /></div>
               <div className="ml-3">
-                <h3 className="text-sm font-semibold text-[#193833]">System analysis</h3>
-                <p className="mt-0.5 text-[10px] text-slate-400">Review credible failure modes and their impact</p>
+                <h3 className="text-sm font-semibold text-[#193833]">Connection analysis</h3>
+                <p className="mt-0.5 text-[10px] text-slate-400">Review structural failure modes and their impact</p>
               </div>
               <span className="ml-auto text-xs font-semibold text-[#52736a]">{completedSystems}/{failureModes.length}</span>
             </div>
@@ -617,7 +617,7 @@ function FailSafeReviews() {
               <table className="w-full min-w-[720px] text-left">
                 <thead>
                   <tr className="bg-[#fafbf9] text-[10px] font-semibold uppercase tracking-[0.1em] text-slate-400">
-                    <th className="px-5 py-3">Component / system</th><th className="px-4 py-3">Potential failure mode</th><th className="px-4 py-3">Impact</th><th className="px-4 py-3">Owner</th><th className="px-5 py-3">Status</th>
+                    <th className="px-5 py-3">Structural element</th><th className="px-4 py-3">Potential failure mode</th><th className="px-4 py-3">Impact</th><th className="px-4 py-3">Owner</th><th className="px-5 py-3">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -649,8 +649,8 @@ function FailSafeReviews() {
           </section>
 
           {[
-            ["Independence check", "Confirm protective mechanisms remain separate from the systems they protect", checks.slice(0, 3)],
-            ["Fail-safe effectiveness", "Verify failures are detected and equipment transitions to a safe state", checks.slice(3)],
+            ["Independent design check", "Confirm revised shop drawings received a complete engineering review", checks.slice(0, 3)],
+            ["Connection capacity", "Verify the built connection resists the full suspended-walkway demand", checks.slice(3)],
           ].map(([title, description, questions]) => (
             <section key={title as string} className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white">
               <div className="border-b border-slate-100 px-5 py-4">
@@ -684,10 +684,10 @@ function FailSafeReviews() {
         <aside className="space-y-4 xl:sticky xl:top-[92px]">
           <div className="rounded-2xl bg-[#173c36] p-5 text-white">
             <div className="flex items-center justify-between">
-              <div><p className="text-[10px] uppercase tracking-[0.14em] text-emerald-100/50">Project approval</p><h3 className="mt-1 text-sm font-semibold">Approval blocked</h3></div>
+              <div><p className="text-[10px] uppercase tracking-[0.14em] text-emerald-100/50">Engineering sign-off</p><h3 className="mt-1 text-sm font-semibold">Sign-off blocked</h3></div>
               <Icon name="shield" className="h-6 w-6 text-[#d9ff85]" />
             </div>
-            <p className="mt-4 text-xs leading-5 text-emerald-50/65">Resolve all critical failure modes and complete effectiveness checks before approval.</p>
+            <p className="mt-4 text-xs leading-5 text-emerald-50/65">Resolve all critical connection issues and complete independent calculations before sign-off.</p>
             <div className="mt-5 rounded-xl bg-white/8 p-3">
               <div className="flex items-center gap-2 text-xs"><span className="h-2 w-2 rounded-full bg-amber-400" /><span className="font-medium">{issues} items require attention</span></div>
             </div>
@@ -720,7 +720,7 @@ function FailSafeReviews() {
 
 function Accountability() {
   const [filter, setFilter] = useState("All");
-  const filters = ["All", "Leadership", "Engineering", "Product", "Design", "Operations", "Quality"];
+  const filters = ["All", "Leadership", "Engineering", "Investigation", "Fabrication", "Compliance", "Quality"];
   const visibleMembers = filter === "All" ? teamMembers : teamMembers.filter((member) => member.discipline === filter);
   const pending = teamMembers.filter((member) => member.status === "Pending").length;
   const ongoing = teamMembers.filter((member) => member.status === "In progress").length;
@@ -729,9 +729,9 @@ function Accountability() {
     <main className="mx-auto w-full max-w-[1440px] p-5 sm:p-8">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
         <div>
-          <p className="mb-2 text-xs font-semibold text-[#52736a]">Atlas Expansion / Project team</p>
-          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Accountability</h2>
-          <p className="mt-2 max-w-2xl text-sm text-slate-500">Clear ownership, direct contacts, and current responsibilities across the project team.</p>
+          <p className="mb-2 text-xs font-semibold text-[#52736a]">Hyatt Regency Walkway Review / Investigation team</p>
+          <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#142d2a]">Engineering accountability</h2>
+          <p className="mt-2 max-w-2xl text-sm text-slate-500">Clear ownership for structural calculations, shop-drawing review, code compliance, and independent verification.</p>
         </div>
         <button className="flex w-fit items-center gap-2 rounded-xl bg-[#173c36] px-4 py-2.5 text-sm font-semibold text-white shadow-sm">
           <Icon name="plus" className="h-4 w-4" /> Add team member
@@ -764,7 +764,7 @@ function Accountability() {
           <div className="flex items-center justify-between border-b border-slate-100 p-5">
             <div>
               <h3 className="text-sm font-semibold text-[#17312e]">Project directory</h3>
-              <p className="mt-1 text-xs text-slate-400">{visibleMembers.length} people · Atlas Expansion</p>
+              <p className="mt-1 text-xs text-slate-400">{visibleMembers.length} people · Hyatt Regency Walkway Review</p>
             </div>
             <button className="flex items-center gap-2 rounded-lg border border-slate-200 px-3 py-2 text-[10px] font-semibold text-slate-500">
               <Icon name="download" className="h-3.5 w-3.5" /> Export
@@ -834,7 +834,7 @@ function Accountability() {
               <div><p className="text-[10px] uppercase tracking-[0.14em] text-emerald-100/50">Ownership health</p><h3 className="mt-1 text-sm font-semibold">All critical roles covered</h3></div>
               <Icon name="check" className="h-5 w-5 text-[#d9ff85]" />
             </div>
-            <p className="mt-3 text-xs leading-5 text-emerald-50/65">Every safety-critical area has a named owner and direct contact. No accountability gaps detected.</p>
+            <p className="mt-3 text-xs leading-5 text-emerald-50/65">Every structural review area has a named owner, from load calculations and connection design to fabrication records and final verification.</p>
             <div className="mt-4 h-1.5 overflow-hidden rounded-full bg-white/10"><div className="h-full w-full rounded-full bg-[#d9ff85]" /></div>
           </section>
         </aside>
@@ -871,7 +871,7 @@ function ReportModal({ onClose }: { onClose: () => void }) {
         <form onSubmit={(event) => { event.preventDefault(); setSubmitted(true); }} className="space-y-5 p-5 sm:p-6">
           <div>
             <label className="mb-2 block text-xs font-semibold text-slate-700">Project</label>
-            <select className="field"><option>Atlas Expansion — Line 4</option><option>Harbor Retrofit</option><option>Operations — General</option></select>
+            <select className="field"><option>Hyatt Regency — Suspended Walkways</option><option>Hyatt Regency — Fabrication Records</option><option>Investigation — General</option></select>
           </div>
           <div>
             <label className="mb-2 block text-xs font-semibold text-slate-700">What happened?</label>
@@ -880,7 +880,7 @@ function ReportModal({ onClose }: { onClose: () => void }) {
           <div>
             <label className="mb-2 block text-xs font-semibold text-slate-700">Type of safety risk</label>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              {["Equipment", "Environment", "Process", "People"].map((type) => (
+              {["Design", "Connection", "Review", "Fabrication"].map((type) => (
                 <label key={type} className="cursor-pointer">
                   <input type="radio" name="type" className="peer sr-only" />
                   <span className="block rounded-xl border border-slate-200 px-3 py-2.5 text-center text-xs font-medium text-slate-500 peer-checked:border-[#4c8274] peer-checked:bg-[#eff7f3] peer-checked:text-[#28584d]">{type}</span>
@@ -889,7 +889,7 @@ function ReportModal({ onClose }: { onClose: () => void }) {
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div><label className="mb-2 block text-xs font-semibold text-slate-700">Where did this occur?</label><input className="field" placeholder="Location or work area" /></div>
+            <div><label className="mb-2 block text-xs font-semibold text-slate-700">Where did this occur?</label><input className="field" placeholder="Walkway level or connection" /></div>
             <div><label className="mb-2 block text-xs font-semibold text-slate-700">When did this occur?</label><input type="datetime-local" className="field" /></div>
           </div>
           <div>
@@ -919,7 +919,7 @@ export default function App() {
         <Topbar title={title} onMenu={() => setMenuOpen(true)} />
         {active === "Assessments" ? (
           <Assessments />
-        ) : active === "Fail-Safe Reviews" ? (
+        ) : active === "Structural Reviews" ? (
           <FailSafeReviews />
         ) : active === "Accountability" ? (
           <Accountability />
