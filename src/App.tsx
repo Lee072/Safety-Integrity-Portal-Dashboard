@@ -126,7 +126,7 @@ function Icon({ name, className = "h-5 w-5" }: { name: IconName; className?: str
     </svg>
   );
 }
-
+// walkway concerns
 const concerns = [
   { id: "SC-0284", title: "Walkway hanger-rod redesign doubles connection load", owner: "Maya Chen", due: "Today", risk: "Critical" },
   { id: "SC-0281", title: "Box-beam weld capacity remains unverified", owner: "Liam Foster", due: "Tomorrow", risk: "High" },
